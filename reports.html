@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Alerts | MedSupply</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="app-page">
+    <div class="app-shell">
+        <aside class="sidebar"><a class="brand" href="index.html"><span
+                    class="brand-mark">✚</span><span>Med<span>Supply</span><small>Healthcare
+                        inventory</small></span></a>
+            <div class="side-label">Workspace</div>
+            <nav class="side-nav"><a href="dashboard.html"><span>⌂</span>Dashboard</a><a
+                    href="inventory.html"><span>▦</span>Inventory</a><a class="active"
+                    href="reports.html"><span>◷</span>Reports & Alerts</a></nav>
+            <div class="side-label">Manage</div>
+            <nav class="side-nav"><a href="#"><span>⚙</span>Settings</a><a href="index.html"><span>↪</span>Logout</a>
+            </nav>
+            <div class="side-bottom">
+                <div class="avatar">AS</div>
+                <div><strong>Admin Staff</strong><small>Operations team</small></div><button>•••</button>
+            </div>
+        </aside>
+        <main class="app-main">
+            <header class="app-header"><button class="sidebar-toggle">☰</button>
+                <div><span class="breadcrumb">Workspace /</span><strong>Reports & alerts</strong></div>
+                <div class="header-actions"><button class="icon-button">⌕</button><button
+                        class="icon-button notification">♢<i></i></button>
+                    <div class="header-user"><span class="avatar">AS</span><span><strong>Admin
+                                Staff</strong><small>Administrator</small></span></div>
+                </div>
+            </header>
+            <div class="page-content">
+                <div class="page-intro">
+                    <div>
+                        <div class="eyebrow">Operational intelligence</div>
+                        <h1>Reports & alerts</h1>
+                        <p>Turn inventory signals into timely action for your care teams.</p>
+                    </div>
+                    <div class="button-row"><button class="button button-outline" id="generate-report">↗ Generate
+                            report</button><button class="button button-primary" id="export-csv">↓ Export CSV</button>
+                    </div>
+                </div>
+                <section class="summary-grid" id="report-summary"></section>
+                <div class="dashboard-grid report-charts">
+                    <section class="panel chart-panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Inventory by category</h2>
+                                <p>Quantity currently on hand</p>
+                            </div>
+                        </div>
+                        <div class="chart-wrap doughnut-wrap"><canvas id="category-chart"></canvas>
+                            <div class="doughnut-label"><strong id="total-quantity">0</strong><small>units total</small>
+                            </div>
+                        </div>
+                        <div class="chart-legend" id="category-legend"></div>
+                    </section>
+                    <section class="panel chart-panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Stock status distribution</h2>
+                                <p>Health of your current inventory</p>
+                            </div>
+                        </div>
+                        <div class="chart-wrap"><canvas id="status-chart"></canvas></div>
+                    </section>
+                    <section class="panel chart-panel usage-chart">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Monthly inventory usage</h2>
+                                <p>Units issued from stock</p>
+                            </div><select>
+                                <option>2026</option>
+                                <option>2025</option>
+                            </select>
+                        </div>
+                        <div class="chart-wrap"><canvas id="usage-chart"></canvas></div>
+                    </section>
+                </div>
+                <div class="dashboard-grid lower-grid">
+                    <section class="panel expiry-panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Expiry monitoring</h2>
+                                <p>Prioritised by days remaining</p>
+                            </div><a href="inventory.html" class="text-link">Manage stock →</a>
+                        </div>
+                        <div class="table-scroll">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Category</th>
+                                        <th>Expiry date</th>
+                                        <th>Days remaining</th>
+                                        <th>Quantity</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="expiry-body"></tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="panel alerts-panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Alerts & notifications</h2>
+                                <p>Automated inventory signals</p>
+                            </div>
+                        </div>
+                        <div id="report-alerts" class="alerts-list"></div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/reports.js"></script>
+</body>
+
+</html>

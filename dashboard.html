@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | MedSupply</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="app-page">
+    <div class="app-shell">
+        <aside class="sidebar"><a class="brand" href="index.html"><span
+                    class="brand-mark">✚</span><span>Med<span>Supply</span><small>Healthcare
+                        inventory</small></span></a>
+            <div class="side-label">Workspace</div>
+            <nav class="side-nav"><a class="active" href="dashboard.html"><span>⌂</span>Dashboard</a><a
+                    href="inventory.html"><span>▦</span>Inventory</a><a href="reports.html"><span>◷</span>Reports &
+                    Alerts</a></nav>
+            <div class="side-label">Manage</div>
+            <nav class="side-nav"><a href="#"><span>⚙</span>Settings</a><a href="index.html"><span>↪</span>Logout</a>
+            </nav>
+            <div class="side-bottom">
+                <div class="avatar">AS</div>
+                <div><strong>Admin Staff</strong><small>Operations team</small></div><button>•••</button>
+            </div>
+        </aside>
+        <main class="app-main">
+            <header class="app-header"><button class="sidebar-toggle">☰</button>
+                <div><span class="breadcrumb">Workspace /</span><strong>Dashboard</strong></div>
+                <div class="header-actions"><button class="icon-button">⌕</button><button
+                        class="icon-button notification">♢<i></i></button>
+                    <div class="header-user"><span class="avatar">AS</span><span><strong>Admin
+                                Staff</strong><small>Administrator</small></span></div>
+                </div>
+            </header>
+            <div class="page-content">
+                <div class="page-intro">
+                    <div>
+                        <div class="eyebrow">Tuesday, 15 September 2026</div>
+                        <h1>Good morning, Admin.</h1>
+                        <p>Here’s what’s happening across your inventory today.</p>
+                    </div><a class="button button-primary" href="inventory.html">＋ Add new item</a>
+                </div>
+                <section class="summary-grid" id="summary-grid"></section>
+                <div class="dashboard-grid">
+                    <section class="panel chart-panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Inventory overview</h2>
+                                <p>Available stock across the last 6 months</p>
+                            </div><select id="chart-range">
+                                <option>Last 6 months</option>
+                                <option>Last 12 months</option>
+                            </select>
+                        </div>
+                        <div class="chart-wrap"><canvas id="overview-chart"></canvas></div>
+                        <div class="legend"><span><i class="legend-dot blue"></i>Available stock</span><span><i
+                                    class="legend-dot light"></i>Reorder level</span></div>
+                    </section>
+                    <section class="panel category-panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Inventory categories</h2>
+                                <p>Current quantity by category</p>
+                            </div><a href="inventory.html" class="text-link">View all →</a>
+                        </div>
+                        <div id="category-list" class="category-list"></div>
+                    </section>
+                </div>
+                <div class="dashboard-grid lower-grid">
+                    <section class="panel activity-panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Recent inventory activity</h2>
+                                <p>Latest updates from your stock room</p>
+                            </div><a href="inventory.html" class="text-link">View inventory →</a>
+                        </div>
+                        <div class="table-scroll">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Item name</th>
+                                        <th>Category</th>
+                                        <th>Quantity</th>
+                                        <th>Status</th>
+                                        <th>Last updated</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="activity-body"></tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="panel alerts-panel">
+                        <div class="panel-heading">
+                            <div>
+                                <h2>Alerts & attention</h2>
+                                <p>Items that need a closer look</p>
+                            </div><a href="reports.html" class="text-link">See all →</a>
+                        </div>
+                        <div id="alerts-list" class="alerts-list"></div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/data.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

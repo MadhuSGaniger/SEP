@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedSupply | Healthcare Inventory Management</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="landing-page">
+    <header class="site-header container"><a class="brand" href="index.html"><span
+                class="brand-mark">✚</span><span>Med<span>Supply</span><small>Healthcare inventory
+                    intelligence</small></span></a>
+        <nav class="site-nav"><a class="active" href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a
+                href="inventory.html">Inventory</a><a href="reports.html">Reports & Alerts</a></nav><a
+            class="button button-dark" href="dashboard.html">Admin portal <span>→</span></a><button class="menu-toggle"
+            aria-label="Open navigation">☰</button>
+    </header>
+    <main>
+        <section class="hero container">
+            <div class="hero-copy">
+                <div class="eyebrow"><span class="pulse-dot"></span> Hospital operations, made visible</div>
+                <h1>Better stock decisions.<br><em>Better patient care.</em></h1>
+                <p>MedSupply helps healthcare teams monitor medicines, medical supplies, stock levels, expiry dates, and
+                    inventory usage from one clear command center.</p>
+                <div class="hero-actions"><a class="button button-primary" href="dashboard.html">View dashboard
+                        <span>↗</span></a><a class="button button-outline" href="inventory.html">Manage inventory</a>
+                </div>
+                <div class="trust-row"><span>Trusted workflow</span><span
+                        class="trust-line"></span><strong>24/7</strong><small>visibility across care teams</small></div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-glow"></div>
+                <div class="hospital-card">
+                    <div class="mini-top"><span>Live inventory pulse</span><span class="status-pill success">●
+                            Live</span></div>
+                    <div class="visual-cross">✚</div>
+                    <div class="supply-bars">
+                        <div><span>Medicines</span><strong>84%</strong><i style="width:84%"></i></div>
+                        <div><span>Supplies</span><strong>68%</strong><i style="width:68%"></i></div>
+                        <div><span>Equipment</span><strong>92%</strong><i style="width:92%"></i></div>
+                    </div>
+                    <div class="visual-footer"><span>Last sync</span><strong>Today, 09:42 AM</strong></div>
+                </div>
+                <div class="floating-note note-top"><span class="icon-box green">✓</span>
+                    <div><strong>98.2%</strong><small>stock accuracy</small></div>
+                </div>
+                <div class="floating-note note-bottom"><span class="icon-box orange">!</span>
+                    <div><strong>12</strong><small>items need attention</small></div>
+                </div>
+            </div>
+        </section>
+        <section class="stats-strip container">
+            <div><span class="stat-icon blue">▦</span><small>Total items</small><strong
+                    data-stat="items">1,248</strong><em>+8.4% this month</em></div>
+            <div><span class="stat-icon orange">⌁</span><small>Low stock items</small><strong
+                    data-stat="low">18</strong><em class="warn">Requires review</em></div>
+            <div><span class="stat-icon red">◷</span><small>Expiring soon</small><strong
+                    data-stat="expiring">24</strong><em class="warn">Next 30 days</em></div>
+            <div><span class="stat-icon green">₹</span><small>Total inventory value</small><strong
+                    data-stat="value">₹18.6L</strong><em>+4.2% this month</em></div>
+        </section>
+        <section class="feature-section container">
+            <div class="section-heading">
+                <div>
+                    <div class="eyebrow">Built for confident care</div>
+                    <h2>From stock room to <em>signal.</em></h2>
+                </div>
+                <p>Everything your team needs to keep critical supplies available, compliant, and moving.</p>
+            </div>
+            <div class="feature-grid">
+                <article><span class="feature-number">01</span>
+                    <div class="feature-icon">▦</div>
+                    <h3>Inventory tracking</h3>
+                    <p>Keep a live, searchable record of every medicine, supply, and device.</p><a
+                        href="inventory.html">Explore tracking <span>→</span></a>
+                </article>
+                <article><span class="feature-number">02</span>
+                    <div class="feature-icon">⌁</div>
+                    <h3>Stock monitoring</h3>
+                    <p>See reorder thresholds early and make replenishment a planned action.</p><a
+                        href="dashboard.html">Monitor stock <span>→</span></a>
+                </article>
+                <article><span class="feature-number">03</span>
+                    <div class="feature-icon">◷</div>
+                    <h3>Expiry management</h3>
+                    <p>Protect patients and budgets with clear expiry timelines and alerts.</p><a
+                        href="reports.html">View expiry report <span>→</span></a>
+                </article>
+                <article><span class="feature-number">04</span>
+                    <div class="feature-icon">↗</div>
+                    <h3>Reports & alerts</h3>
+                    <p>Turn operational data into the next best decision for your team.</p><a href="reports.html">Open
+                        reports <span>→</span></a>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-inner"><a class="brand" href="index.html"><span
+                    class="brand-mark">✚</span><span>Med<span>Supply</span><small>Healthcare inventory
+                        intelligence</small></span></a>
+            <p>Operational clarity for better care.</p><small>© 2026 MedSupply. Frontend portfolio concept.</small>
+        </div>
+    </footer>
+    <script src="js/data.js"></script>
+    <script>document.querySelector('.menu-toggle').addEventListener('click', () => document.querySelector('.site-nav').classList.toggle('open')); if (window.MedSupply) { const s = MedSupply.getStats(); document.querySelector('[data-stat="items"]').textContent = s.items.toLocaleString(); document.querySelector('[data-stat="low"]').textContent = s.low; document.querySelector('[data-stat="expiring"]').textContent = s.expiring; document.querySelector('[data-stat="value"]').textContent = MedSupply.formatCurrency(s.value); }</script>
+</body>
+
+</html>
